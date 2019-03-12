@@ -1,0 +1,55 @@
+.summary {
+    background-color: $white;
+    padding: 5px;
+    font-family: $font-main;
+
+    @media(min-width: $tablet) {
+        margin-top: 64px;
+    }
+
+    &__container {
+        border: 1px dashed $gray-dark;
+        padding: 20px 10px;
+    }
+
+    &__title {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        line-height: 1;
+        margin: 0;
+        margin-bottom: 15px;
+    }
+
+    &__row {
+        padding: 5px 0;
+
+        @media(min-width: $tablet) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        &--last {
+            padding-bottom: 20px;
+            border-bottom: 1px dashed $gray-dark;
+            margin-bottom: 10px;
+        }
+
+        &:last-child {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__cell {
+        font-size: 14px;
+
+        &--total {
+            font-weight: bold;
+        }
+
+        &--value {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    }    
+}
