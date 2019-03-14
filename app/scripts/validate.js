@@ -1,4 +1,4 @@
-const REGEX_EMAIL = /^[a-zA-Z0-9.!]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
+const REGEX_EMAIL = /^[a-zA-Z0-9.!]+@[a-zA-Z0-9.!]+\.[a-zA-Z0-9]+$/;
 const REGEX_POSTAL_CODE = /^\d{5}$/;
 const REGEX_PHONE_NUMBER = /^\(\d{3}\)\ \d{3}\-\d{2}\-\d{2}$/;
 const REGEX_CREDIT_CARD = /^(\d{4}\-){3}\d{4}$/;
@@ -25,7 +25,7 @@ class Validator {
     }
 
     /**
-    * Preparing fields and to validation (adding listeners)
+    * Preparing fields to validation (adding listeners)
     */
     prepareForm() {
         const fields = this.fields;
@@ -35,8 +35,8 @@ class Validator {
             this.handleFilledClass(input);
 
             this.fieldsValidation[idx] = field.getAttribute('data-required')
-                ? true
-                : false;
+                ? false
+                : true;
 
             field.addEventListener('change', (event) => {
                 this.validate(field, idx, event.target.value);
