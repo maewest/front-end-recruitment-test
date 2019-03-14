@@ -1,3 +1,10 @@
+#Assumptions:
+1) I tried not to modify the environment but it was necessary to modify gulpfile.babel.js (to add more js files and call 'images' task for gulp serve).
+
+2) Solution is supported by the lastest versions of Chrome and Firefox (I have no possibility to test my solution on Safari).
+
+3) Validation using regular expressions is simplified. It supports only patterns presented in the checkout.png file.
+
 # Snowdog Front-end Recruitment test
 
 ## Rules

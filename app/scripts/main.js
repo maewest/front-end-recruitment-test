@@ -74,35 +74,4 @@
   }
 
   // Your custom JavaScript goes here
-  const cloneElement = (actionElement, elementToClone, appendTo) => {
-    const button = document.querySelector(actionElement);
-    const element = document.querySelector(elementToClone)
-    const container = document.querySelector(appendTo);
-
-    if (!button && !element && !container) return;
-  
-    button.addEventListener('click', () => {
-      container.appendChild(element.cloneNode());
-    })
-  }
-
-  cloneElement('#js-addMoreBacon', '#js-imageBacon', '#js-imageContainer');
-
-  const handleFilledClass = (element) => {
-    if (element.value) {
-      element.classList.add('filled');
-    }
-    else {
-      element.classList.remove('filled');
-    }
-  }
-
-  const inputs = Array.from(document.querySelectorAll('.form__input'));
-
-  inputs.forEach(input => {
-    handleFilledClass(input);
-
-    input.addEventListener('change', (e) => handleFilledClass(e.target));
-  })
-
 })();
