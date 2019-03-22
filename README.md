@@ -1,4 +1,4 @@
-#Assumptions:
+# Assumptions:
 1) I tried not to modify the environment but it was necessary to modify gulpfile.babel.js (to add more js files and call 'images' task for gulp serve).
 
 2) Solution is supported by the lastest versions of Chrome and Firefox (I have no possibility to test my solution on Safari).
