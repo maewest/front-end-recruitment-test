@@ -19,9 +19,18 @@ class Validator {
         if (this.form) {
             this.button = this.form.querySelector('button');
             this.fields = Array.from(
-                this.form.querySelectorAll('#js-validate')
+                this.form.querySelectorAll('.js-validate')
+            );
+            this.success = this.form.querySelector('.form__success');
+        }
+
+        if (this.button) {
+            this.button.addEventListener('click', (event) =>
+                this.handleSubmit(event)
             );
         }
+
+        this.prepareForm();
     }
 
     /**
@@ -107,11 +116,31 @@ class Validator {
     * Enabling/Disabling form button
     */
     handleButtonState() {
-        const formIsValid = this.fieldsValidation
+        this.button.disabled = !this.isFormValid();
+    }
+
+    /**
+    * Displaying success message on sending form
+    * (there is no option to display error now)
+    * @param {object} event event
+    */
+    handleSubmit(event) {
+        event.preventDefault();
+        if (this.isFormValid()) {
+            this.success.classList.add('active');
+        } else {
+            this.success.classList.add('remove');
+        }
+    }
+
+    /**
+     * Checking if form is valid
+     * @return {boolean} return if form is valid
+     */
+    isFormValid() {
+        return this.fieldsValidation
             .reduce((a, b) => a && b);
-        this.button.disabled = !formIsValid;
     }
 }
 
-const validator = new Validator('#js-checkout');
-validator.prepareForm();
+new Validator('#js-checkout');

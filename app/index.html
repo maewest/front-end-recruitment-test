@@ -64,6 +64,7 @@
         </div>
         <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
           <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
+          <a href="#checkout" class="mdl-layout__tab">Checkout</a>
           <a href="#features" class="mdl-layout__tab">Features</a>
           <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
@@ -228,6 +229,173 @@
             </div>
           </section>
         </div>
+        <div class="mdl-layout__tab-panel" id="checkout">
+          <section class="container">
+            <div class="mdl-cell mdl-cell--12-col">
+              <div class="checkout">
+                <div class="mdl-grid">
+                  <div class="mdl-cell mdl-cell--8-col">
+                    <form class="form" id="js-checkout">
+                      <fieldset>
+                        <div class="form__row">
+                          <div class="form__cell">
+                            <legend class="form__title">Personal Information</legend>
+                          </div>
+                        </div>                         
+                        <div class="form__row">
+                          <div class="form__cell">
+                            <div class="form__group js-validate" data-required="true">
+                              <input class="form__input" type="text" id="firstName">
+                              <label class="form__label" for="firstName">First name*</label>
+                              <span class="error-message">This field is required</span>
+                            </div>
+                          </div>
+                          <div class="form__cell">
+                            <div class="form__group js-validate" data-required="true">
+                              <input class="form__input" type="text" id="lastName">
+                              <label class="form__label" for="lastName">Last name*</label>
+                              <span class="error-message">This field is required</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form__row">
+                          <div class="form__cell">
+                            <div class="form__group js-validate" data-required="true" data-validation="email">
+                              <input class="form__input" type="email" id="email">
+                              <label class="form__label" for="email">Email*</label>
+                              <span class="error-message">Email adress format 'youremail@example.com' is required</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form__row">
+                          <div class="form__cell">
+                            <div class="form__group  form__group--select js-validate" data-required="true">
+                              <select id="country" class="form__input form__input--select">
+                                <option disabled selected value></option>
+                                <option>United States</option>
+                                <option>Canada</option>
+                                <option>Mexico</option>
+                              </select>
+                              <label class="form__label" for="country">Country*</label>
+                              <span class="error-message">This field is required</span>
+                            </div>
+                          </div>
+                          <div class="form__cell">
+                            <div class="form__group js-validate" data-required="true" data-validation="postalCode">
+                              <input class="form__input" type="text" id="postalCode" >
+                              <label class="form__label" for="postalCode">Postal Code*</label>
+                              <span class="error-message">Postal code format '00000' is required</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form__row">
+                          <div class="form__cell">
+                            <div class="form__group js-validate" data-validation="phone">
+                              <input class="form__input" type="text" id="phoneNumber" placeholder="(000) 000-00-00">
+                              <label class="form__label" for="phoneNumber">Phone Number</label>
+                              <span class="error-message">Phone number format '(000) 000-00-00' or empty field</span>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <fieldset>
+                        <div class="form__row">
+                          <div class="form__cell">
+                            <legend class="form__title">Payment details <i class="material-icons">lock</i></legend>
+                          </div>
+                        </div>
+                        <div class="form__row">
+                          <div class="form__cell">
+                            <div class="form__group form__group--card js-validate" data-required="true" data-validation="creditCard">
+                              <input class="form__input" type="text" id="creditCard" placeholder="0000-0000-0000-0000">
+                              <label class="form__label" for="creditCard">Credit Card Number*</label>
+                              <span class="error-message">Credit card format '0000-0000-0000-0000' is required</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form__row">
+                          <div class="form__cell">
+                            <div class="form__group js-validate" data-required="true" data-validation="security">
+                              <input class="form__input" type="password" id="securityCode">
+                              <label class="form__label" for="securityCode">Security Code*</label>
+                              <span class="error-message">Security code format '0000' is required</span>
+                              <div class="tooltip tooltip--form">
+                                <i class="material-icons">help_outline</i>
+                                <div class="tooltip__content">
+                                  This is tooltip :)
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form__cell">
+                            <div class="form__group js-validate" data-required="true" data-validation="expiration">
+                              <input class="form__input" id="expirationDate" placeholder="MM/YY">
+                              <label class="form__label" for="expirationDate">Expiration date*</label>
+                              <span class="error-message">Expiration date format '00/00' is required</span>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                      <div class="form__row">
+                        <div class="form__cell">
+                          <button class="form__submit" disabled> <i class="material-icons">shopping_cart</i> complete purchase</button>
+                          <div class="form__success">Your form was successfully send.</div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  <div class="mdl-cell mdl-cell--4-col">
+                    <div class="summary">
+                      <div class="summary__container">
+                        <h2 class="summary__title">Your order</h2>
+                        <div class="summary__row">
+                          <div class="summary__cell">
+                            Apple Watch Sport
+                          </div>
+                          <div class="summary__cell">
+                            $ 580
+                          </div>
+                        </div>
+                        <div class="summary__row summary__row--last">
+                          <div class="summary__cell">
+                            Modern Buckle
+                          </div>
+                          <div class="summary__cell">
+                            $ 380
+                          </div>
+                        </div>
+                        <div class="summary__row">
+                          <div class="summary__cell">
+                            Total Purchases 
+                          </div>
+                          <div class="summary__cell">
+                            $ 960.0
+                          </div>
+                        </div>
+                        <div class="summary__row summary__row--last">
+                          <div class="summary__cell">
+                            Estimated tax
+                          </div>
+                          <div class="summary__cell">
+                            $ 0
+                          </div>
+                        </div>
+                        <div class="summary__row">
+                          <div class="summary__cell summary__cell--total">
+                            Total
+                          </div>
+                          <div class="summary__cell summary__cell--value">
+                            $ 960
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
@@ -286,7 +454,7 @@
 
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
     <!-- build:js scripts/main.min.js -->
-    <script src="scripts/main.js"></script>
+    <script src="scripts/main.min.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
