@@ -26,11 +26,6 @@
         line-height: 1;
         position: relative;
 
-        i {
-            font-size: 15px;
-            padding-left: 10px;
-        }
-
         &:before {
             position: absolute;
             top: 50%;
@@ -48,6 +43,11 @@
             counter-increment: fieldset;
             content: counter(fieldset);
         }
+    }
+
+    &__icon {
+        font-size: 15px;
+        padding-left: 10px;
     }
 
     &__row {
@@ -193,16 +193,16 @@
             background-color: $success-dark;
         }
 
-        i {
-            padding-right: 10px;
-            font-size: 16px;
-        }
-
         &:disabled {
             background-color: $gray-medium;
             border-color: $gray-dark;
             cursor: not-allowed;
         }
+    }
+
+    &__cart {
+        padding-right: 10px;
+        font-size: 16px;
     }
 
     &__success {
